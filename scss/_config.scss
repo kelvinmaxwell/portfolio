@@ -13,16 +13,40 @@ $background-opacity: 0.5;
       background-size: cover;
       background-repeat: no-repeat;
       background-attachment: fixed;
+
+      &:after {
+        content: "";
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+        background: rgba($primary-color, $background-opacity);
+      }
     }
-    &:after {
-      content: "";
-      position: absolute;
-      top: 0;
-      right: 0;
-      width: 100%;
-      height: 100%;
-      z-index: -1;
-      background: rgba($primary-color, $background-opacity);
-    }
+  }
+}
+
+//media Query mixins
+
+@mixin mediasm {
+  @media screen and(max-width:500px) {
+    @content;
+  }
+}
+@mixin mediamd {
+  @media screen and(max-width:768px) {
+    @content;
+  }
+}
+@mixin medialg {
+  @media screen and (min-width: 769px) and(max-width:500px) {
+    @content;
+  }
+}
+@mixin mediaxl {
+  @media screen and(min-width:1171px) {
+    @content;
   }
 }
