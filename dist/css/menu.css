@@ -40,14 +40,14 @@
   .menu-nav {
     margin: 0;
     padding: 0;
-    background: #373737;
+    background: #292525;
     list-style: none;
     transform: translate3d(0, -100%, 0);
     transition: all 0.5s ease-in-out; }
     .menu-nav.show {
       transform: translate3d(0, 0, 0); }
   .menu-branding {
-    background: #444;
+    background: #363131;
     transform: translate3d(0, 100%, 0);
     transition: all 0.5s ease-in-out; }
     .menu-branding.show {
