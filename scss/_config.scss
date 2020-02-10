@@ -1,0 +1,60 @@
+$primary-color: rgb(54, 49, 49);
+$secondary-color: #eece1a;
+$show-home-image: true;
+$home-image: url(../img/laptop.jpeg);
+$background-opacity: 0.5;
+@mixin easeOut {
+  transition: all 0.5s ease-in-out;
+}
+@mixin background {
+  @if $show-home-image {
+    &#bg-img {
+      background: $home-image;
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+
+      &:after {
+        content: "";
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+        background: rgba($primary-color, $background-opacity);
+      }
+    }
+  }
+}
+//set text color
+@function set-text-color($color) {
+  @if (lightness($color) >40) {
+    @return #000;
+  } @else {
+    @return #fff;
+  }
+}
+
+//media Query mixins
+
+@mixin mediasm {
+  @media screen and(max-width:500px) {
+    @content;
+  }
+}
+@mixin mediamd {
+  @media screen and(max-width:768px) {
+    @content;
+  }
+}
+@mixin medialg {
+  @media screen and (min-width: 769px) and(max-width:500px) {
+    @content;
+  }
+}
+@mixin mediaxl {
+  @media screen and(min-width:1171px) {
+    @content;
+  }
+}
